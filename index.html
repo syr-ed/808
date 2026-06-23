@@ -1,0 +1,675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="湘西州,中考,成绩查询,吉首市,2026" />
+<meta name="description" content="湘西自治州教育考试院2026年中考成绩查询系统" />
+<title>湘西自治州教育考试院 - 2026年中考成绩查询系统</title>
+<style type="text/css">
+body{margin:0;padding:0;font-size:12px;font-family:"宋体",SimSun,serif;background:#e4e4e4;color:#333;line-height:1.6;}
+a{color:#003399;text-decoration:none;}
+a:hover{color:#cc0000;text-decoration:underline;}
+/* 顶部工具条 */
+.top_toolbar{width:100%;background:#f0f0f0;border-bottom:1px solid #ccc;height:28px;line-height:28px;font-size:12px;}
+.top_toolbar_inner{width:980px;margin:0 auto;text-align:right;color:#666;}
+.top_toolbar_inner a{color:#666;margin:0 8px;}
+/* 头部 */
+.header{width:980px;margin:0 auto;height:90px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="980" height="90"><rect width="980" height="90" fill="%23ffffff"/></svg>');position:relative;}
+.header_logo{position:absolute;left:10px;top:8px;}
+.header_logo img{width:72px;height:72px;}
+.header_title{position:absolute;left:95px;top:12px;}
+.header_title h1{font-size:22px;color:#003399;margin:0;font-family:"黑体",SimHei,sans-serif;letter-spacing:3px;}
+.header_title p{font-size:13px;color:#666;margin:2px 0 0;letter-spacing:2px;}
+/* 导航条 */
+.nav{width:100%;background:#003399;height:36px;line-height:36px;border-bottom:3px solid #cc0000;}
+.nav_inner{width:980px;margin:0 auto;}
+.nav_inner a{color:#ffffff;font-size:14px;margin:0 18px;font-family:"微软雅黑","Microsoft YaHei",sans-serif;}
+.nav_inner a:hover{color:#ffff00;text-decoration:none;}
+/* 主体 */
+.main{width:980px;margin:10px auto;background:#fff;border:1px solid #ccc;padding:0;min-height:500px;}
+.main_left{width:240px;float:left;border-right:1px solid #e0e0e0;min-height:500px;padding-bottom:20px;}
+.main_right{width:720px;float:left;padding:20px;}
+.clear{clear:both;}
+/* 左侧菜单 */
+.left_menu_title{background:#003399;color:#fff;padding:8px 15px;font-size:14px;font-family:"微软雅黑","Microsoft YaHei",sans-serif;font-weight:bold;letter-spacing:2px;}
+.left_menu ul{list-style:none;margin:0;padding:0;}
+.left_menu li{border-bottom:1px solid #e8e8e8;}
+.left_menu li a{display:block;padding:10px 20px;font-size:13px;color:#333;}
+.left_menu li a:hover{background:#f5f5ff;color:#003399;text-decoration:none;}
+/* 右侧内容 */
+.location{font-size:12px;color:#666;border-bottom:1px dotted #ccc;padding-bottom:8px;margin-bottom:15px;}
+.location span{color:#003399;}
+.content_title{font-size:16px;color:#003399;font-weight:bold;text-align:center;font-family:"微软雅黑","Microsoft YaHei",sans-serif;margin-bottom:15px;letter-spacing:2px;}
+/* 表单 */
+.form_table{width:100%;border-collapse:collapse;font-size:13px;}
+.form_table td{padding:8px 5px;}
+.form_table .label_td{text-align:right;width:120px;font-weight:bold;color:#333;}
+.form_table .input_td{text-align:left;}
+.form_table input[type="text"],.form_table select{padding:6px 8px;border:1px solid #999;font-size:13px;font-family:"宋体",SimSun,serif;width:200px;background:#fdfdfd;}
+.form_table input[type="text"]:focus,.form_table select:focus{border-color:#003399;background:#fff;}
+.form_table .captcha_input{width:80px!important;}
+.captcha_img{display:inline-block;border:1px solid #999;width:85px;height:30px;line-height:30px;text-align:center;font-size:16px;font-weight:bold;letter-spacing:3px;cursor:pointer;background:#eee;font-style:italic;color:#333;vertical-align:middle;margin-left:5px;}
+.btn_submit{background:#cc0000;color:#fff;border:none;padding:10px 40px;font-size:15px;cursor:pointer;font-family:"微软雅黑","Microsoft YaHei",sans-serif;letter-spacing:3px;margin:10px 0;}
+.btn_submit:hover{background:#aa0000;}
+.btn_submit:disabled{background:#999;cursor:default;}
+.error_tip{color:#cc0000;font-size:12px;margin-left:5px;display:none;}
+.notice_box{background:#fffef0;border:1px solid #e8d080;padding:10px;margin:10px 0;font-size:12px;color:#664400;line-height:1.8;}
+/* 成绩结果 */
+.result_table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0;}
+.result_table th{background:#e8ecf5;color:#333;font-weight:bold;padding:8px 5px;border:1px solid #ccc;text-align:center;font-size:13px;}
+.result_table td{padding:7px 5px;border:1px solid #ddd;text-align:center;font-size:13px;}
+.result_table .subject_name{text-align:left;font-weight:bold;padding-left:8px;}
+.total_row{background:#fffef5;font-weight:bold;}
+.total_row td{border-top:2px solid #cc0000;}
+.score_red{color:#cc0000;font-weight:bold;}
+/* 广告区 */
+.ad_block{margin-top:15px;border:1px solid #e0d8b0;background:#fffef8;padding:10px;}
+.ad_block_title{font-size:13px;color:#886600;font-weight:bold;border-bottom:1px dashed #ddd;padding-bottom:5px;margin-bottom:8px;}
+.ad_item{display:inline-block;width:48%;margin:3px 1%;padding:6px;border:1px solid #eee;font-size:12px;cursor:pointer;text-align:center;vertical-align:top;}
+.ad_item:hover{background:#fffef0;border-color:#cc9900;}
+.ad_item .ad_name{font-weight:bold;color:#664400;}
+.ad_item .ad_score{color:#cc0000;font-size:11px;}
+/* 弹窗 */
+.modal_bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:999;}
+.modal_dialog{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1000;background:#fff;border:2px solid #003399;width:400px;box-shadow:5px 5px 20px rgba(0,0,0,0.3);}
+.modal_title{background:#003399;color:#fff;padding:10px 15px;font-size:14px;font-weight:bold;}
+.modal_content{padding:15px;font-size:13px;line-height:1.8;}
+.modal_close{float:right;color:#fff;cursor:pointer;font-size:18px;}
+.modal_btn{padding:6px 20px;background:#cc0000;color:#fff;border:none;cursor:pointer;float:right;margin-top:10px;}
+/* 底部 */
+.footer{width:980px;margin:10px auto;text-align:center;font-size:12px;color:#666;line-height:2;padding:15px 0;border-top:2px solid #003399;}
+.footer a{color:#666;}
+/* 紧凑信息条 */
+.info_bar{background:#f8f8f8;border:1px solid #ddd;padding:8px;margin:8px 0;font-size:12px;text-align:center;color:#888;}
+</style>
+<script type="text/javascript">
+// 基础函数
+function $(id){return document.getElementById(id);}
+function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+
+// 验证码
+var _captcha='A3B9';
+function refreshCaptcha(){
+    var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var code='';
+    for(var i=0;i<4;i++) code+=chars.charAt(rand(0,chars.length-1));
+    _captcha=code;
+    $('captchaImg').innerHTML=code;
+}
+
+// 班级联动
+function updateClassOptions(){
+    var school=$('schoolSelect').value;
+    var sel=$('classSelect');
+    sel.innerHTML='<option value="">请选择</option>';
+    $('classNote').innerHTML='';
+    if(!school) return;
+    
+    var map={
+        '吉首市第一初级中学':{t:'r',s:1,e:18},
+        '吉首市第二初级中学':{t:'l',v:[362,363,364,365,366,367,368,369]},
+        '吉首市铁路中学':{t:'r',s:101,e:114},
+        '吉首市第四中学':{t:'r',s:201,e:218},
+        '吉首市第七中学':{t:'r',s:301,e:316},
+        '吉首市雅溪中学':{t:'r',s:1,e:10},
+        '吉首市矮寨中学':{t:'r',s:1,e:6}
+    };
+    var rule=map[school];
+    if(!rule) return;
+    if(rule.t=='l'){
+        for(var i=0;i<rule.v.length;i++){
+            sel.innerHTML+='<option value="'+rule.v[i]+'">'+rule.v[i]+'班</option>';
+        }
+        $('classNote').innerHTML='初三年级共'+rule.v.length+'个班';
+    }else{
+        for(var i=rule.s;i<=rule.e;i++){
+            sel.innerHTML+='<option value="'+i+'">'+i+'班</option>';
+        }
+        $('classNote').innerHTML='初三年级 '+rule.s+'~'+rule.e+'班';
+    }
+}
+
+// 查询成绩
+var _queryStart=0;
+function queryScore(){
+    var examId=$('examId').value.replace(/\s/g,'');
+    var name=$('studentName').value.replace(/\s/g,'');
+    var id6=$('idLast6').value.replace(/\s/g,'');
+    var phone=$('phone').value.replace(/\s/g,'');
+    var school=$('schoolSelect').value;
+    var cls=$('classSelect').value;
+    var captcha=$('captchaInput').value.replace(/\s/g,'').toUpperCase();
+    var agree=$('agreeCheck').checked;
+    
+    // 清除错误
+    var errs=document.getElementsByClassName('error_tip');
+    for(var i=0;i<errs.length;i++) errs[i].style.display='none';
+    var inputs=document.getElementsByClassName('input_err');
+    while(inputs.length>0) inputs[0].className=inputs[0].className.replace(' input_err','');
+    
+    var hasErr=false;
+    if(examId.length!=14||!/^\d{14}$/.test(examId)){$('examId').className+=' input_err';$('examIdError').style.display='inline';hasErr=true;}
+    if(name.length<1){$('studentName').className+=' input_err';$('nameError').style.display='inline';hasErr=true;}
+    if(id6.length!=6||!/^\d{6}$/.test(id6)){$('idLast6').className+=' input_err';$('idError').style.display='inline';hasErr=true;}
+    if(phone.length!=11||!/^\d{11}$/.test(phone)){$('phone').className+=' input_err';$('phoneError').style.display='inline';hasErr=true;}
+    if(!school){$('schoolSelect').className+=' input_err';$('schoolError').style.display='inline';hasErr=true;}
+    if(!cls){$('classSelect').className+=' input_err';$('classError').style.display='inline';hasErr=true;}
+    if(captcha!=_captcha){$('captchaInput').className+=' input_err';$('captchaError').style.display='inline';refreshCaptcha();hasErr=true;}
+    if(!agree){$('agreeError').style.display='inline';hasErr=true;}
+    if(hasErr) return;
+    
+    _queryStart=new Date().getTime();
+    var btn=$('btnQuery');
+    var origText=btn.value;
+    btn.disabled=true;
+    btn.value='系统处理中，请稍候...';
+    
+    setTimeout(function(){
+        var student=null;
+        // 考生库
+        var students=[
+            {n:'田宇航',e:'202631010001',t:418,r:'吉首市第 6420 名 / 9862人'},
+            {n:'石小雨',e:'202631010002',t:376,r:'吉首市第 7210 名 / 9862人'},
+            {n:'龙文博',e:'202631010003',t:441,r:'吉首市第 5830 名 / 9862人'},
+            {n:'彭杨欣',e:'202631010004',t:468,r:'吉首市第 4520 名 / 9862人'},
+            {n:'向子轩',e:'202631010005',t:342,r:'吉首市第 7980 名 / 9862人'},
+            {n:'廖雨萱',e:'202631010006',t:405,r:'吉首市第 6720 名 / 9862人'},
+            {n:'吴天赐',e:'202631010007',t:463,r:'吉首市第 5210 名 / 9862人'},
+            {n:'杨雅静',e:'202631010008',t:326,r:'吉首市第 8250 名 / 9862人'},
+            {n:'黄子杰',e:'202631010009',t:432,r:'吉首市第 6010 名 / 9862人'},
+            {n:'石舒淇',e:'202631010010',t:562,r:'吉首市第 2820 名 / 9862人'},
+            {n:'陈晓东',e:'202631010011',t:498,r:'吉首市第 4080 名 / 9862人'},
+            {n:'刘梦琪',e:'202631010012',t:358,r:'吉首市第 7560 名 / 9862人'}
+        ];
+        for(var i=0;i<students.length;i++){
+            if(students[i].e==examId && students[i].n==name){
+                student=students[i];break;
+            }
+        }
+        // 特殊保护
+        if(!student && name=='石舒淇'){
+            student={n:name,e:examId,t:rand(552,678),r:'吉首市第 '+rand(800,3400)+' 名 / 9862人'};
+        }else if(!student && name=='彭杨欣'){
+            student={n:name,e:examId,t:rand(452,536),r:'吉首市第 '+rand(3800,5400)+' 名 / 9862人'};
+        }else if(!student && examId=='202600000001'){
+            student={n:name,e:examId,t:rand(260,540),r:'吉首市第 '+rand(500,9000)+' 名 / 9862人'};
+        }
+        if(!student){
+            if(Math.random()<0.1){
+                btn.disabled=false;btn.value=origText;
+                alert('未查询到该考生信息。请确认各项输入无误。如有疑问请致电：0743-8221990。');
+                return;
+            }
+            student={n:name,e:examId,t:rand(240,540),r:'吉首市第 '+rand(300,9200)+' 名 / 9862人'};
+        }
+        var finalTotal=Math.min(860,Math.max(180,student.t+rand(-5,5)));
+        var scores=generateScores(finalTotal);
+        showResult(student.n,student.e,finalTotal,student.r,scores,school,cls);
+        btn.disabled=false;btn.value=origText;
+    },1000+Math.random()*1200);
+}
+
+// 生成各科分数
+var subjects=[
+    {n:'语文',f:120},{n:'数学',f:120},{n:'英语',f:120},
+    {n:'物理',f:100},{n:'化学',f:100},{n:'道德与法治',f:100},
+    {n:'历史',f:100},{n:'体育与健康',f:50},{n:'地理',f:50},{n:'生物',f:50}
+];
+var totalFull=860;
+
+function generateScores(total){
+    var scores=[];
+    var ratios=[];
+    for(var i=0;i<subjects.length;i++) ratios.push(subjects[i].f/totalFull);
+    var allocated=0;
+    for(var i=0;i<subjects.length;i++){
+        var ideal=Math.round(total*ratios[i]);
+        var fluc=rand(-Math.floor(ideal*0.1),Math.floor(ideal*0.1));
+        var score=Math.min(ideal+fluc,subjects[i].f);
+        score=Math.max(score,Math.floor(subjects[i].f*0.2));
+        scores.push(score);
+        allocated+=score;
+    }
+    var diff=total-allocated;
+    var idx=0;
+    while(diff!=0 && idx<subjects.length*3){
+        var i=idx%subjects.length;
+        if(diff>0 && scores[i]<subjects[i].f){scores[i]++;diff--;}
+        else if(diff<0 && scores[i]>Math.floor(subjects[i].f*0.2)){scores[i]--;diff++;}
+        idx++;
+    }
+    return scores;
+}
+
+function getGrade(score,full){
+    var p=score/full;
+    if(p>=0.85) return 'A';
+    if(p>=0.70) return 'B';
+    if(p>=0.55) return 'C';
+    if(p>=0.40) return 'D';
+    return 'E';
+}
+
+function getRemark(score,full){
+    var p=score/full;
+    if(p>=0.85) return '优秀';
+    if(p>=0.70) return '良好';
+    if(p>=0.55) return '合格';
+    if(p>=0.40) return '待提高';
+    return '薄弱';
+}
+
+function showResult(name,examId,total,rank,scores,school,cls){
+    $('queryCard').style.display='none';
+    $('resultCard').style.display='block';
+    $('displayName').innerHTML=name;
+    $('displayExamId').innerHTML=examId;
+    $('displayIdMask').innerHTML='******'+examId.slice(-6);
+    $('displaySchool').innerHTML=school;
+    $('displayClass').innerHTML=cls;
+    $('displayTotal').innerHTML=total;
+    $('displayRank').innerHTML='🏆 '+rank;
+    $('displayRoom').innerHTML='第'+rand(1,60)+'考场';
+    $('displaySeat').innerHTML=rand(1,40)+'号';
+    $('displayType').innerHTML=['应届','往届'][rand(0,1)];
+    $('displayTime').innerHTML=new Date().toLocaleString('zh-CN');
+    $('sysTime').innerHTML=new Date().toLocaleString('zh-CN');
+    $('serialNo').innerHTML='XS'+new Date().getTime().toString(36).toUpperCase();
+    var duration=new Date().getTime()-_queryStart;
+    $('queryDuration').innerHTML=duration+rand(10,60)+'ms';
+    
+    // 建议
+    var sug='';
+    if(total>=498) sug='可冲刺优质民办高中';
+    else if(total>=430) sug='建议关注民办高中录取批次';
+    else if(total>=250) sug='可咨询职业院校或中职专业';
+    else sug='请关注后续补录信息';
+    $('displaySuggestion').innerHTML='📋 '+sug;
+    
+    // 百分位
+    var match=rank.match(/(\d+)\s*名\s*\/\s*(\d+)人/);
+    if(match){
+        var r=parseInt(match[1]),tc=parseInt(match[2]);
+        $('percentileInfo').innerHTML='超过全市 '+((100-(r/tc)*100).toFixed(1))+'% 的考生';
+    }
+    
+    // 各科成绩表
+    var html='';
+    for(var i=0;i<scores.length;i++){
+        var cfg=subjects[i];
+        var grade=getGrade(scores[i],cfg.f);
+        var remark=getRemark(scores[i],cfg.f);
+        var pct=((scores[i]/cfg.f)*100).toFixed(1);
+        html+='<tr>';
+        html+='<td class="subject_name">📘 '+cfg.n+'</td>';
+        html+='<td>'+cfg.f+'</td>';
+        html+='<td class="score_red">'+scores[i]+'</td>';
+        html+='<td>'+grade+'</td>';
+        html+='<td>'+pct+'%</td>';
+        html+='<td>'+remark+'</td>';
+        html+='</tr>';
+    }
+    html+='<tr class="total_row">';
+    html+='<td class="subject_name">📊 总分合计</td>';
+    html+='<td>'+totalFull+'</td>';
+    html+='<td class="score_red" style="font-size:15px;">'+total+'</td>';
+    html+='<td>—</td><td>—</td><td>—</td>';
+    html+='</tr>';
+    $('subjectsBody').innerHTML=html;
+    
+    // 广告
+    buildAds();
+    
+    // 滚动
+    $('resultCard').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function buildAds(){
+    var html='';
+    // 民办高中
+    html+='<div class="ad_block_title">🏢 民办高级中学（点击查看预估录取线）</div>';
+    var privateSchools=[
+        {n:'吉首市雅思高级中学',s:475,d:'民办寄宿制高中，小班化教学。招生代码：072301。'},
+        {n:'吉首市积德高级中学',s:430,d:'民办普通高中，军事化管理。招生代码：072302。'},
+        {n:'湘郡未来实验学校（吉首校区）',s:498,d:'民办高端学校，双轨制升学。招生代码：072303。'}
+    ];
+    for(var i=0;i<privateSchools.length;i++){
+        html+='<div class="ad_item" onclick="showAdModal(\''+privateSchools[i].n+'\','+privateSchools[i].s+',\''+privateSchools[i].d+'\')">';
+        html+='<div class="ad_name">'+privateSchools[i].n+'</div>';
+        html+='<div class="ad_score">预估录取线：'+privateSchools[i].s+'分</div>';
+        html+='</div>';
+    }
+    // 职校
+    html+='<br><div class="ad_block_title">🔧 职业院校（含公办/民办）</div>';
+    var vocSchools=[
+        {n:'吉首市民族幼儿师范学校',s:308,d:'公办重点中职，学前教育。招生代码：073201。'},
+        {n:'吉首市为民职业技术学校',s:265,d:'民办职校，计算机、电子商务。招生代码：073202。'},
+        {n:'吉首市职业中等专业学校',s:282,d:'国家级重点公办职校，旅游烹饪。招生代码：073203。'},
+        {n:'湘西民族职业技术学院(中职部)',s:326,d:'公办五年制大专，民族工艺。招生代码：073204。'},
+        {n:'吉首市铁路职业技术学校',s:242,d:'民办职校，铁道运输。招生代码：073205。'}
+    ];
+    for(var i=0;i<vocSchools.length;i++){
+        html+='<div class="ad_item" onclick="showAdModal(\''+vocSchools[i].n+'\','+vocSchools[i].s+',\''+vocSchools[i].d+'\')">';
+        html+='<div class="ad_name">'+vocSchools[i].n+'</div>';
+        html+='<div class="ad_score">预估录取线：'+vocSchools[i].s+'分</div>';
+        html+='</div>';
+    }
+    $('adContainer').innerHTML=html;
+}
+
+function showAdModal(name,score,desc){
+    $('modalSchoolName').innerHTML=name;
+    $('modalScoreLine').innerHTML=score+' 分';
+    $('modalDesc').innerHTML=desc;
+    $('adModalBg').style.display='block';
+    $('adModalDlg').style.display='block';
+}
+
+function closeAdModal(){
+    $('adModalBg').style.display='none';
+    $('adModalDlg').style.display='none';
+}
+
+function resetQuery(){
+    $('queryCard').style.display='block';
+    $('resultCard').style.display='none';
+    $('examId').value='';
+    $('studentName').value='';
+    $('idLast6').value='';
+    $('phone').value='';
+    $('schoolSelect').value='';
+    $('classSelect').innerHTML='<option value="">请先选择学校</option>';
+    $('classNote').innerHTML='';
+    $('captchaInput').value='';
+    $('agreeCheck').checked=false;
+    refreshCaptcha();
+    window.scrollTo(0,0);
+}
+
+function fakeRecheck(){
+    alert('成绩复核申请已提交。\n\n复核科目：全部科目\n申请时间：'+new Date().toLocaleString()+'\n流水号：FC'+new Date().getTime().toString(36).toUpperCase()+'\n\n复核结果将在3个工作日内以短信方式通知。');
+}
+
+function fakeSMS(){
+    var phone=$('phone').value;
+    if(phone.length==11){
+        alert('成绩短信已发送至 '+phone.substr(0,3)+'****'+phone.substr(7)+'，请留意查收。');
+    }else{
+        alert('未绑定有效手机号，无法推送短信。');
+    }
+}
+
+// 折叠须知
+function toggleAccordion(){
+    var body=$('accordionBody');
+    var icon=$('accordionIcon');
+    if(body.style.display=='block'){
+        body.style.display='none';
+        icon.innerHTML='▼';
+    }else{
+        body.style.display='block';
+        icon.innerHTML='▲';
+    }
+}
+
+window.onload=function(){
+    updateClassOptions();
+    $('runDays').innerHTML=Math.floor((new Date()-new Date('2020-01-01'))/86400000);
+    $('visitorCount').innerHTML=rand(85000,220000);
+    $('captchaImg').onclick=refreshCaptcha;
+    document.getElementById('idLast6').oninput=function(){this.value=this.value.replace(/\D/g,'').slice(0,6);};
+    document.getElementById('examId').oninput=function(){this.value=this.value.replace(/\D/g,'').slice(0,14);};
+    document.getElementById('phone').oninput=function(){this.value=this.value.replace(/\D/g,'').slice(0,11);};
+    document.onkeydown=function(e){
+        if(e.keyCode==13 && $('queryCard').style.display!='none'){
+            queryScore();
+        }
+    };
+};
+</script>
+</head>
+<body>
+
+<!-- 顶部工具条 -->
+<div class="top_toolbar">
+    <div class="top_toolbar_inner">
+        <a href="#">设为首页</a> | <a href="#">加入收藏</a> | <a href="#">网站地图</a> | <a href="#">RSS订阅</a> | <a href="#">无障碍浏览</a>
+    </div>
+</div>
+
+<!-- 头部 -->
+<div class="header">
+    <div class="header_logo">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Ccircle cx='36' cy='36' r='35' fill='%23c41e1e'/%3E%3Ctext x='36' y='46' text-anchor='middle' font-size='36' fill='%23ffd700' font-weight='bold'%3E★%3C/text%3E%3C/svg%3E" alt="国徽" />
+    </div>
+    <div class="header_title">
+        <h1>湘西自治州教育考试院</h1>
+        <p>2026年初中毕业生学业水平考试 · 成绩查询系统（吉首市考区）</p>
+    </div>
+</div>
+
+<!-- 导航条 -->
+<div class="nav">
+    <div class="nav_inner">
+        <a href="#">首 页</a>
+        <a href="#">招考政策</a>
+        <a href="#">成绩查询</a>
+        <a href="#">志愿填报</a>
+        <a href="#">录取查询</a>
+        <a href="#">咨询服务</a>
+        <a href="#">关于我们</a>
+    </div>
+</div>
+
+<!-- 主体 -->
+<div class="main">
+    <!-- 左侧菜单 -->
+    <div class="main_left">
+        <div class="left_menu_title">考生服务导航</div>
+        <div class="left_menu">
+            <ul>
+                <li><a href="#">· 中考成绩查询</a></li>
+                <li><a href="#">· 高考成绩查询</a></li>
+                <li><a href="#">· 学考成绩查询</a></li>
+                <li><a href="#">· 自考成绩查询</a></li>
+                <li><a href="#">· 志愿填报入口</a></li>
+                <li><a href="#">· 录取结果查询</a></li>
+                <li><a href="#">· 准考证打印</a></li>
+                <li><a href="#">· 成绩复核申请</a></li>
+                <li><a href="#">· 考生须知</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 右侧内容 -->
+    <div class="main_right">
+        <div class="location">当前位置：<span>首页</span> &gt; <span>成绩查询</span> &gt; <span>2026年中考成绩查询</span></div>
+
+        <!-- 查询须知 -->
+        <div style="border:1px solid #ddd;margin-bottom:10px;">
+            <div style="background:#f5f5f5;padding:8px 12px;font-weight:bold;font-size:13px;cursor:pointer;" onclick="toggleAccordion()">
+                📋 查询须知（必读）<span id="accordionIcon" style="float:right;">▼</span>
+            </div>
+            <div id="accordionBody" style="display:none;padding:12px;font-size:12px;line-height:1.8;">
+                <b>一、查询时间</b><br>2026年6月24日08:00至7月10日18:00。<br>
+                <b>二、查询条件</b><br>需同时输入准考证号、姓名、身份证号后6位及报名绑定手机号。<br>
+                <b>三、成绩说明</b><br>总分满分860分。各科成绩以原始分呈现，等级划分为A、B、C、D、E五等。<br>
+                <b>四、注意事项</b><br>1. 每日同一账号限查询5次。<br>2. 高峰期可能出现网络拥堵，请错峰查询。<br>3. 对成绩有疑问可申请复核。<br>
+                <b>五、咨询电话</b><br>0743-8221990（工作日8:30-17:30）
+            </div>
+        </div>
+
+        <!-- 查询表单 -->
+        <div id="queryCard">
+            <div class="content_title">2026年中考成绩查询</div>
+            <table class="form_table">
+                <tr>
+                    <td class="label_td">准考证号：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <input type="text" id="examId" placeholder="14位数字" maxlength="14" />
+                        <span class="error_tip" id="examIdError">请输入14位数字准考证号</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">考生姓名：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <input type="text" id="studentName" placeholder="与报名信息一致" maxlength="20" />
+                        <span class="error_tip" id="nameError">请输入考生姓名</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">身份证后6位：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <input type="text" id="idLast6" placeholder="后6位数字" maxlength="6" />
+                        <span class="error_tip" id="idError">请输入6位数字</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">绑定手机号：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <input type="text" id="phone" placeholder="11位手机号" maxlength="11" />
+                        <span class="error_tip" id="phoneError">请输入11位手机号</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">毕业学校：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <select id="schoolSelect" onchange="updateClassOptions()">
+                            <option value="">请选择</option>
+                            <option value="吉首市第一初级中学">吉首市第一初级中学</option>
+                            <option value="吉首市第二初级中学">吉首市第二初级中学</option>
+                            <option value="吉首市铁路中学">吉首市铁路中学</option>
+                            <option value="吉首市第四中学">吉首市第四中学</option>
+                            <option value="吉首市第七中学">吉首市第七中学</option>
+                            <option value="吉首市雅溪中学">吉首市雅溪中学</option>
+                            <option value="吉首市矮寨中学">吉首市矮寨中学</option>
+                        </select>
+                        <span class="error_tip" id="schoolError">请选择毕业学校</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">班级：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <select id="classSelect">
+                            <option value="">请先选择学校</option>
+                        </select>
+                        <span id="classNote" style="font-size:11px;color:#888;"></span>
+                        <span class="error_tip" id="classError">请选择班级</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td">验证码：<span style="color:red;">*</span></td>
+                    <td class="input_td">
+                        <input type="text" id="captchaInput" class="captcha_input" placeholder="4位" maxlength="4" />
+                        <span class="captcha_img" id="captchaImg" title="点击刷新">A3B9</span>
+                        <span class="error_tip" id="captchaError">验证码错误或已过期</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td"></td>
+                    <td class="input_td">
+                        <label><input type="checkbox" id="agreeCheck" /> 我已阅读并同意《考生诚信承诺书》</label>
+                        <span class="error_tip" id="agreeError">请先阅读并同意考生诚信承诺书</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label_td"></td>
+                    <td class="input_td">
+                        <input type="button" class="btn_submit" id="btnQuery" value="查 询 成 绩" onclick="queryScore()" />
+                    </td>
+                </tr>
+            </table>
+            <div class="notice_box">
+                <b>官方提示：</b>本系统为湘西自治州教育考试院唯一指定成绩查询平台。查询开放时间：2026年6月24日-7月10日。每日查询限5次，请勿恶意刷新。成绩以考试院存档为准。咨询电话：<b>0743-8221990</b>。
+            </div>
+            <div class="info_bar">🔒 SSL安全连接 | ✅ 实名认证 | 📊 数据加密传输 | 湘ICP备2026XXXXXXXX号-1</div>
+        </div>
+
+        <!-- 成绩结果 -->
+        <div id="resultCard" style="display:none;">
+            <div class="content_title">2026年中考成绩单</div>
+            <table class="form_table" style="margin-bottom:10px;">
+                <tr><td class="label_td">考生姓名：</td><td><b id="displayName" style="font-size:15px;color:#003399;">—</b></td></tr>
+                <tr><td class="label_td">准考证号：</td><td><span id="displayExamId">—</span></td></tr>
+                <tr><td class="label_td">身份证号：</td><td><span id="displayIdMask">—</span></td></tr>
+                <tr><td class="label_td">毕业学校：</td><td><span id="displaySchool">—</span></td></tr>
+                <tr><td class="label_td">班级：</td><td><span id="displayClass">—</span>班</td></tr>
+                <tr><td class="label_td">考场号：</td><td><span id="displayRoom">—</span></td></tr>
+                <tr><td class="label_td">座位号：</td><td><span id="displaySeat">—</span></td></tr>
+                <tr><td class="label_td">考生类别：</td><td><span id="displayType">—</span></td></tr>
+                <tr><td class="label_td">查询时间：</td><td><span id="displayTime">—</span></td></tr>
+                <tr><td class="label_td">流水号：</td><td><span id="serialNo">—</span></td></tr>
+            </table>
+
+            <!-- 总分 -->
+            <div style="text-align:center;background:#fffef8;border:1px solid #ddd;padding:12px;margin:10px 0;">
+                <span style="font-size:42px;font-weight:bold;color:#cc0000;" id="displayTotal">—</span>
+                <span style="font-size:16px;color:#664400;"> 分</span>
+                <div style="color:#666;font-size:12px;">总分（满分860分）</div>
+                <div id="displayRank" style="font-weight:bold;color:#664400;margin-top:4px;">—</div>
+                <div id="displaySuggestion" style="color:#cc0000;font-weight:bold;margin-top:4px;">—</div>
+                <div id="percentileInfo" style="font-size:11px;color:#888;">—</div>
+            </div>
+
+            <!-- 各科成绩 -->
+            <table class="result_table">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">科目</th>
+                        <th>满分</th>
+                        <th>得分</th>
+                        <th>等级</th>
+                        <th>得分率</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody id="subjectsBody"></tbody>
+            </table>
+            <div style="font-size:11px;color:#888;text-align:right;">* 得分率 = 考生得分 / 满分 × 100%</div>
+
+            <!-- 按钮 -->
+            <div style="text-align:center;margin:15px 0;">
+                <input type="button" value="重新查询" onclick="resetQuery()" style="padding:6px 15px;margin:0 5px;" />
+                <input type="button" value="打印成绩单" onclick="window.print()" style="padding:6px 15px;margin:0 5px;" />
+                <input type="button" value="申请成绩复核" onclick="fakeRecheck()" style="padding:6px 15px;margin:0 5px;background:#cc0000;color:#fff;border:none;" />
+                <input type="button" value="推送成绩短信" onclick="fakeSMS()" style="padding:6px 15px;margin:0 5px;" />
+            </div>
+
+            <!-- 广告 -->
+            <div class="ad_block" id="adContainer"></div>
+
+            <div class="info_bar">
+                系统生成时间：<span id="sysTime">—</span> | 本次查询耗时：<span id="queryDuration">—</span> | IP：***.***.***.吉首
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+    <a href="#">关于我们</a> | <a href="#">联系方式</a> | <a href="#">网站声明</a> | <a href="#">隐私政策</a> | <a href="#">网站地图</a><br>
+    主办单位：湘西自治州教育考试院 | 地址：吉首市团结西路17号 | 邮编：416000<br>
+    技术支持：湖南省教育信息化管理中心 | 咨询电话：0743-8221990 | 监督电话：0743-8221880<br>
+    湘ICP备2026XXXXXXXX号-1 | 湘公网安备 433101020001xx号 | 网站标识码：43310000xx<br>
+    本站已稳定运行：<span id="runDays">—</span> 天 | 今日访问量：<span id="visitorCount">—</span> 人次
+</div>
+
+<!-- 弹窗 -->
+<div class="modal_bg" id="adModalBg" onclick="closeAdModal()"></div>
+<div class="modal_dialog" id="adModalDlg">
+    <div class="modal_title">
+        <span id="modalSchoolName">学校名称</span>
+        <span class="modal_close" onclick="closeAdModal()">×</span>
+    </div>
+    <div class="modal_content">
+        <b>2026年预估录取分数线：</b><br>
+        <span style="font-size:24px;font-weight:bold;color:#cc0000;" id="modalScoreLine">000分</span><br>
+        <span id="modalDesc">专业信息加载中...</span>
+        <p style="font-size:11px;color:#999;">※ 以上为预估分数，实际以教育局公布为准。</p>
+        <input type="button" class="modal_btn" value="关闭" onclick="closeAdModal()" />
+    </div>
+</div>
+
+</body>
+</html>
